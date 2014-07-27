@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Car Trip Calculator</title>
+  <meta charset="utf-8">
+  <meta name="description" content="Car Trip Calculator">
+  <meta name="author" content="PJP">
+  <meta name="generator" content="slidify" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/default.css" media="all" >
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/phone.css" 
+    media="only screen and (max-device-width: 480px)" >
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/slidify.css" >
+  <link rel="stylesheet" href="libraries/highlighters/highlight.js/css/tomorrow.css" />
+  <base target="_blank"> <!-- This amazingness opens all links in a new tab. -->  <link rel=stylesheet href="./assets/css/ribbons.css"></link>
+
+  
+  <!-- Grab CDN jQuery, fall back to local if offline -->
+  <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.7.min.js"></script>
+  <script>window.jQuery || document.write('<script src="libraries/widgets/quiz/js/jquery.js"><\/script>')</script> 
+  <script data-main="libraries/frameworks/io2012/js/slides" 
+    src="libraries/frameworks/io2012/js/require-1.0.8.min.js">
+  </script>
+  
+  
+
+</head>
+<body style="opacity: 0">
+  <slides class="layout-widescreen">
+    
+    <!-- LOGO SLIDE -->
+        <slide class="title-slide segue nobackground">
+  <hgroup class="auto-fadein">
+    <h1>Car Trip Calculator</h1>
+    <h2>Miles to go</h2>
+    <p>PJP<br/>Consultant, Data Architect</p>
+  </hgroup>
+  <article></article>  
+</slide>
+    
+
+    <!-- SLIDES -->
+    <slide class="" id="slide-1" style="background:;">
+  <hgroup>
+    <h2>Background</h2>
+  </hgroup>
+  <article data-timings="">
+    <h3>This application allows you to determine distance available for driving based on remaining fuel in tank. Typically we say we have used 1/2 or 1/4 of tank and want to know how far we can go with remaining tank. Input the Fuel Capacity of the car and percent of gas tank used and the application will calculate distance car can travel on the remaining gas in tank.</h3>
+
+<h3>The user will get to know the fuel efficiency of their car by getting:</h3>
+
+<ul>
+<li>Fuel Capacity of their Car</li>
+<li>MPG that the Car provides</li>
+<li>Monitor their Gas Gauage proactively</li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <hgroup>
+    <h2>Application Parameters</h2>
+  </hgroup>
+  <article data-timings="">
+    <h3>Following are the input parameters that the user provides</h3>
+
+<ul>
+<li>Tank Size in gallons (range of 18 to 40 is allowed)</li>
+<li>Miles per gallon (range of 8mpg to 50mpg allowed)</li>
+<li>Percent of tank used</li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-3" style="background:;">
+  <hgroup>
+    <h2>Calculations</h2>
+  </hgroup>
+  <article data-timings="">
+    <h3>There are two calculation performed in the application</h3>
+
+<ul>
+<li>Based on percent of gas used determine number of gallons remaining</li>
+<li>Based on the three inputs, tank size, mpg and percent tank used determine remaining miles</li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-4" style="background:;">
+  <hgroup>
+    <h2>Example</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>For example, based on following parameters:</p>
+
+<ul>
+<li>Tank Size = 18</li>
+<li>Mpg = 23</li>
+<li>Tank Used (%) = 50</li>
+</ul>
+
+<pre><code class="r">tankSize &lt;- 18; mpg &lt;- 23; tankUsed &lt;- 50
+remainingGallons &lt;- (tankSize * (1-(tankUsed/100)))
+remainingDistance &lt;- (tankSize * (1-(tankUsed/100))) * mpg
+remainingGallons
+</code></pre>
+
+<pre><code>## [1] 9
+</code></pre>
+
+<pre><code class="r">remainingDistance
+</code></pre>
+
+<pre><code>## [1] 207
+</code></pre>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+    <slide class="backdrop"></slide>
+  </slides>
+  <div class="pagination pagination-small" id='io2012-ptoc' style="display:none;">
+    <ul>
+      <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=1 title='Background'>
+         1
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=2 title='Application Parameters'>
+         2
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=3 title='Calculations'>
+         3
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=4 title='Example'>
+         4
+      </a>
+    </li>
+  </ul>
+  </div>  <!--[if IE]>
+    <script 
+      src="http://ajax.googleapis.com/ajax/libs/chrome-frame/1/CFInstall.min.js">  
+    </script>
+    <script>CFInstall.check({mode: 'overlay'});</script>
+  <![endif]-->
+</body>
+  <!-- Load Javascripts for Widgets -->
+  
+  <!-- LOAD HIGHLIGHTER JS FILES -->
+  <script src="libraries/highlighters/highlight.js/highlight.pack.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+  <!-- DONE LOADING HIGHLIGHTER JS FILES -->
+   
+  </html>
